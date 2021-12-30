@@ -1,0 +1,3792 @@
+$base-grey: #e5e5e5;
+$base-purple: #9d59f7;
+$base-lightblue: #65DACC;
+$base-lightblue-transparent: #65dacca9;
+$base-navy: #1b103f;
+$base-navy-trasparent: #1b103f67;
+$base-yellow: #FCB11C;
+$base-blue: #2975A9;
+$error: rgb(182, 88, 88);
+$transparent-white: rgba(255, 255, 255, 0.20);
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$small-breakpoint: 499px;
+$mobile-breakpoint: 900px;
+$medium-breakpoint: 1080px;
+$large-breakpoint: 1200px;
+$xl-breakpoint: 1440px;
+
+//Global + Widely Used Styles
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    -webkit-print-color-adjust: exact;
+}
+
+.app {
+    background-color: #fcfcfc;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+svg {
+    flex-shrink: 0;
+}
+
+h1 {
+    font-size: 3.4rem;
+    @media only screen and (max-width: 330px) {
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.17em;
+}
+
+h5 {
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.no-animation {
+    transition: none !important;
+}
+
+.opaque {
+    opacity: 1 !important;
+}
+
+
+.opaque-white {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.opaque-navy {
+    color: rgba(27, 16, 63, 1) !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    opacity: 0 !important;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.page-container {
+    width: 100%;
+    min-height: inherit;
+}
+
+//Dashboard
+
+.dashboard-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    min-height: calc(100vh - 80px);
+    h1, h3, p {
+        color: $base-navy;
+    }
+}
+
+.dashboard-bg {
+    position: absolute;
+    bottom: -10vh;
+    width: 100%;
+    height: 20vh;
+    transform: rotate(-2deg);
+    opacity: 0.5;
+    background-image: url('../assets/dashboard-bg.png');
+    background-size: contain;
+}
+
+.dashboard-content-container {
+    top: 80px;
+    padding: 60px;
+    width: 100%;
+    .user {
+        color: $base-lightblue;
+        font-weight: 700;
+        font-style: normal;
+    }
+    @media only screen and (max-width: $mobile-breakpoint) {
+        text-align: center;
+    }
+    @media only screen and (max-width: $mobile-breakpoint) {
+        padding: 60px 40px;
+    }
+}
+
+.dashboard-resumes {
+    margin-top: 30px;
+    margin-bottom: 120px;
+    .user-resume {
+        cursor: pointer;
+        width: 150px;
+        margin: 50px 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 100%;
+            height: 194.12px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+        }
+        p {
+            color: $base-navy;
+        }
+    }
+}
+
+.dashboard-button-wrapper {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.empty-dashboard-resumes {
+    padding: 20px 0;
+}
+
+//Landing Navigation Bar 
+
+.landing-nav {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 60px;
+    z-index: 12;
+    position: relative;
+    opacity: 1;
+    .navbar-login-btn {
+        background-color: $base-lightblue;
+        border: 1px solid $base-lightblue;
+        color: white;
+        &:hover {
+            background-color: $base-lightblue;
+            border: 1px solid $base-lightblue;
+            color: white;
+        }
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        padding: 40px;
+    }
+    @media only screen and (max-height: 450px) {
+        padding: 20px 40px;
+        height: 80px;
+    }
+}
+
+.logo_my {
+    font-size: 1.7rem;
+    color: $base-navy;
+}
+
+.logo_styler {
+    font-family: 'Petrona', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: $base-navy;
+}
+
+.logo-white {
+    color: white !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.navy {
+    color: $base-navy !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-login-btn {
+    padding: 9px 14px 10px 14px;
+    min-width: 110px;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.landing-nav-btn-container {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media only screen and (max-width: $mobile-breakpoint) {
+        display: none;
+    }
+}
+
+.navbar-signup-btn {
+    padding: 9px 14px 10px 14px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid $base-navy;
+    min-width: 110px;
+    color: #1b103f;;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-color: $base-navy;
+        border: 1px solid $base-navy;
+        color: white;
+    }
+}
+
+.expanded-nav-btn {
+    padding: 15px;
+    min-width: 200px;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 15px;
+    @media only screen and (height: 320px) and (width: 568px) {
+        min-width: 200px;
+    }
+    &:hover {
+        background-color: white;
+        border: 1px solid $base-navy;
+        color: $base-navy;
+    }
+}
+
+.expanded-login-btn {
+    color: white;
+    background-color: $base-navy;
+    border: 1px solid $base-navy;
+    margin-top: 50px;
+}
+
+.expanded-signup-btn {
+    color: white;
+    background-color: #9A95AC;
+    border: 1px solid #9A95AC;
+}
+
+
+.login-error {
+    height: 20px;
+    font-size: 0.8rem;
+    color: $error;
+}
+
+.register-error {
+    height: 20px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: $error;
+}
+
+.navbar-mobile {
+    display: none;
+    z-index: 15;
+    div {
+        width: 35px;
+        height: 4px;
+        background-color: #1b103f;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+    .center-burger {
+        margin: 4px 0;
+        width: 30px;
+    }
+    @media only screen and (max-width: $mobile-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        cursor: pointer;
+    }
+}
+
+.main-mobile-nav-page {
+    width: 100%;
+    height: 100%;
+    background-color: $base-lightblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.main-mobile-nav-bg {
+    background-image: url('../assets/main-nav-bg.png');
+    width: 100vw;
+    height: 40vh;
+    background-size: contain;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+.main-mobile-nav-buttons {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    @media only screen and (max-height: 400px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 40px;
+    }
+}
+
+.mobile-nav-btn {
+    background-color: rgba(255, 255, 255, 0.849);
+    color: #53b9ad;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: $base-navy;
+        color: white;
+        border: 1px solid $base-navy;
+    }
+}
+
+.top-exit-transform {
+    transform: rotate(45deg) translate(8.5px, 0);
+    margin: 2px;
+    background-color: $base-navy !important;
+    z-index: 10;
+}
+
+.slide-off {
+    transform: translateX(100px);
+    background-color: $base-navy !important;
+    z-index: 10;
+}
+
+.bottom-exit-transform {
+    transform: rotate(-45deg) translate(8.5px, 0);
+    margin: 2px;
+    background-color: $base-navy !important;
+    z-index: 10;
+}
+
+
+.mobile-nav-page_invisible {
+    width: 100%;
+    height: 100%;
+    background: $base-blue;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(27, 16, 63, 1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: none;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-nav-mobile_expanded {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    background-image: url('../assets/mobile-nav-bg.png');
+    background-size: 70vh;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+//Login and Register Forms
+
+.content-container {
+    width: 100%;
+    height: 65vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+
+.register-container {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    position: relative;
+    @media only screen and (max-height: 600px) {
+        height: 110vh;
+        max-height: 110vh;
+    }
+    @media only screen and (max-height: 450px) {
+        height: auto;
+        max-height: none;
+    }
+    .logo_my,
+    .logo_styler {
+        color: $base-navy;
+    }
+    .navbar-login-btn {
+        background-color: white;
+        border: 1px solid $base-navy;
+        color: $base-navy;
+    }
+    .navbar-signup-btn {
+        background-color: $base-navy;
+        color: white;
+        border: 1px solid $base-navy;
+        &:hover {
+            background-color: $base-navy;
+            color: white;
+            border: 1px solid $base-navy;
+        }
+    }
+    input {
+        background-color: #1b103f1a;
+    }
+}
+
+.register-background {
+    background-image: url('../assets/login-bg.png');
+    background-size: 300px;
+    opacity: 0.2;
+    bottom: -50px;
+    transform: rotate(2deg);
+    background-repeat: repeat-x;
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    z-index: 0;
+}
+
+.login-container {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    position: relative;
+    @media only screen and (max-height: 600px) {
+        height: 110vh;
+        max-height: 110vh;
+    }
+    @media only screen and (max-height: 450px) {
+        height: auto;
+        max-height: none;
+    }
+    .logo_my,
+    .logo_styler {
+        color: $base-lightblue;
+    }
+    .navbar-login-btn {
+        background-color: $base-lightblue;
+        border: 1px solid $base-lightblue;
+        color: white;
+        &:hover {
+            background-color: $base-lightblue;
+            border: 1px solid $base-lightblue;
+        }
+    }
+    .navbar-mobile {
+        div {
+            background-color: $base-lightblue;
+        }
+    }
+}
+
+.login-background {
+    background-image: url('../assets/register-bg.png');
+    background-size: 300px;
+    opacity: 0.4;
+    bottom: -50px;
+    transform: rotate(2deg);
+    background-repeat: repeat-x;
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    z-index: 0;
+}
+
+.login-content {
+    z-index: 2;
+    @media only screen and (max-height: 600px) {
+        height: 100%;
+        padding-bottom: 100px;
+        justify-content: flex-start;
+        min-height: 100vh;
+    }
+    h2 {
+        color: $base-lightblue;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 2rem;
+        }
+        @media only screen and (max-height: 450px) {
+            font-size: 2rem;
+            margin: 10px;
+        }
+    }
+}
+
+.login-inputs-flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: $small-breakpoint) {
+        padding: 0 40px;
+        width: 100%;
+    }
+}
+
+.register-content {
+    z-index: 2;
+    h2 {
+        color: $base-navy;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 2rem;
+        }
+        @media only screen and (max-height: 450px) {
+            font-size: 2rem;
+            margin: 10px;
+        }
+    }
+    .login-form {
+        button {
+            background-color: $base-navy;
+            border: 1px solid $base-navy;
+        }
+        width: 100%;
+        padding: 0 40px;
+    }
+    @media only screen and (max-height: 600px) {
+        height: 100%;
+        padding-bottom: 50px;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    button {
+        background-color: $base-lightblue;
+        color: white;
+        outline: none;
+        border: 1px solid $base-lightblue;
+        padding: 10px 18px 11px 18px;
+        min-width: 120px;
+        border-radius: 40px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        margin: 5px 20px 20px 20px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: #50b3a7;
+            border: 1px solid #50b3a7;
+        }
+        @media only screen and (max-height: 300px) {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+.login-input-section {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    @media only screen and (max-height: 450px) {
+        margin: 10px;
+    }
+    @media only screen and (max-width: 450px) {
+        margin: 15px 0;
+        width: 100%;
+    }
+    label {
+        font-size: .9rem;
+        font-weight: 400;
+        color: $base-navy;
+        margin-bottom: 5px;
+    }
+    input {
+        border-radius: 20px;
+        padding: 0 10px;
+        height: 35px;
+        width: 300px;
+        outline: none;
+        color: #1b103f;
+        font-size: 0.9rem;
+        @media only screen and (max-height: 450px) and (max-width: $small-breakpoint) {
+            width: 40vw;
+        }
+        @media only screen and (max-width: 450px) {
+            width: 100%;
+        }
+    }
+}
+
+.register-input-section {
+    margin: 10px;
+}
+
+.login-link-container {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    color: $base-navy;
+    a {
+        color: $base-navy;
+        margin-left: 7px;
+        font-weight: bold;
+    }
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @media only screen and (max-height: 600px) {
+        position: relative;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: center;
+    }
+    p {
+        color: $base-navy;
+        padding: 10px 20px;
+        font-size: 12px;
+        text-align: center;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 9px;
+        }
+    }
+}
+
+
+//Loading page
+.loading-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 50px;
+        height: auto;
+    }
+}
+
+.creating-loadscreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    @media only screen and (max-width: $small-breakpoint) {
+        flex-direction: column-reverse;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        @media only screen and (max-width: $mobile-breakpoint) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    h2 {
+        color: #1b103f;
+        @media only screen and (max-width: $mobile-breakpoint) {
+            font-size: 2rem;
+        }
+        @media only screen and (max-width: $small-breakpoint) {
+            text-align: center;
+        }
+    }
+}
+
+.landing-page-container {
+    width: 100vw;
+    position: relative;
+}
+
+.landing-bg-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.1;
+    background-size: contain;
+    background-attachment: fixed;
+    background-image: url('../assets/register-bg.png');
+}
+
+.gif-container {
+    position: relative;
+    width: 100vw;
+    height: 800px;
+    margin-top: 40px;
+    background: transparent;
+    @media only screen and (max-width: 1100px) {
+        display: flex;
+        height: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.resume-gif {
+    box-shadow: $box-shadow;
+    width: 450px;
+    position: absolute;
+    right: 400px;
+    transform: rotate(10deg);
+    height: auto;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    @media only screen and (max-width: 1100px) {
+        width: 350px;
+        position: relative;
+        right: 0;
+        align-self: flex-start;
+    }
+    @media only screen and (max-width: 800px) {
+        width: 60vw;
+    }
+    @media only screen and (max-width: 478px) {
+        margin-top: 5%;
+    }
+}
+
+.resume-gif-2 {
+    box-shadow: $box-shadow;
+    width: 450px;
+    position: absolute;
+    right: 100px;
+    transform: rotate(-8deg);
+    height: auto;
+    opacity: 0;
+    margin-top: 30px;
+    transition: all 0.3s ease-in-out;
+    @media only screen and (max-width: 1100px) {
+        width: 350px;
+        position: relative;
+        right: 0;
+    }
+    @media only screen and (max-width: 800px) {
+        width: 60vw;
+        margin-top: -20%;
+    }
+}
+
+.landing-page-banner-1 {
+    padding: 50px;
+    z-index: 5;
+    position: relative;
+    margin-top: 80px;
+    h1 {
+        color: $base-navy;
+        @media (max-width: $small-breakpoint) {
+            font-size: 3.5rem;
+        }
+    }
+    h3 {
+        color: $base-navy;
+        width: 80%;
+        font-weight: 400;
+        margin-left: 10px;
+        margin-top: 20px;
+        @media (max-width: $medium-breakpoint) {
+            width: 90%;
+        }
+        @media (max-width: $small-breakpoint) {
+            width: 100%;
+        }
+        span {
+            font-weight: 400;
+            font-size: 1.2em;
+            font-style: italic;
+            font-family: "Petrona", sans-serif;
+        }
+    }
+    button {
+        background-color: $base-navy;
+        color: white;
+        font-size: 18px;
+        border-radius: 30px;
+        border: none;
+        padding: 15px 40px;
+        margin-top: 30px;
+        cursor: pointer;
+        span {
+            font-weight: 400;
+            font-size: 20px;
+            font-family: "Petrona", sans-serif;
+        }
+    }
+    @media only screen and (max-width: $mobile-breakpoint) {
+        margin-top: 40px;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        margin-top: 0px;
+        padding: 40px;
+        text-align: center;
+    }
+}
+
+.landing-page-banner-2 {
+    padding: 50px;
+    padding-bottom: 100px;
+    z-index: 5;
+    position: relative;
+    text-align: right;
+    h1 {
+        color: $base-navy;
+    }
+    .h3-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    h3 {
+        color: $base-navy;
+        width: 80%;
+        font-weight: 400;
+        margin-left: 10px;
+        margin-top: 20px; 
+        @media (max-width: $medium-breakpoint) {
+            width: 90%;
+        }
+        @media (max-width: $small-breakpoint) {
+            width: 100%;
+        }
+        span {
+            font-weight: 400;
+            font-size: 1.2em;
+            font-style: italic;
+            font-family: "Petrona", sans-serif;
+        }
+    }
+    button {
+        background-color: $base-navy;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        padding: 40px;
+        text-align: center;
+    }
+}
+
+.banner-h1 {
+    font-size: 90px;
+    font-weight: 400;
+    .landing-h1 {
+        color: rgba(255, 255, 255, 0);
+        transition: all 0.3s ease-in-out;
+    }
+    @media (max-width: $small-breakpoint) {
+        font-size: 3.5rem;
+    }
+}
+
+.no-animation {
+    transition: none !important;
+}
+
+.banner-h1-petrona {
+    font-family: 'Petrona', sans-serif;
+    font-style: italic;
+    font-size: 100px;
+    @media (max-width: $small-breakpoint) {
+        font-size: 3.8rem;
+    }
+}
+
+.get-started-container {
+    display: flex;
+    padding: 10px 50px;
+    width: 100%;
+    a {
+        z-index: 1;
+    }
+}
+
+.get-started-btn {
+    background-color: $base-lightblue;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 40px;
+    margin-top: 30px;
+    cursor: pointer;
+    span {
+        font-weight: 400;
+        font-size: 20px;
+        font-family: "Petrona", sans-serif;
+    }
+}
+
+.footer {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    .footer-content {
+        display: flex;
+        width: 100%;
+        padding: 0 20px;
+        justify-content: center;
+        p {
+            padding: 10px 20px;
+            color: $base-navy;
+            font-size: 12px;
+            z-index: 2;
+            text-align: center;
+            @media only screen and (max-width: $small-breakpoint) {
+                font-size: 9px;
+                padding: 10px 2px;
+            }
+        }
+    }
+}
+
+//Main Navigation
+.main-nav {
+    height: 60px;
+    width: 100vw;
+    background-color: #fcfcfc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 60px;
+    box-shadow: 0 2px 10px -5px rgb(158, 158, 158);
+    .navbar-mobile {
+        div {
+            background-color: $base-lightblue;
+            z-index: 15;
+        }
+        .top-exit-transform,
+        .slide-off,
+        .bottom-exit-transform {
+            background-color: white !important;
+        }
+    }
+    a {
+        z-index: 15;
+    }
+    @media (max-width: $small-breakpoint) {
+        padding: 40px;
+    }
+    .logo_my,
+    .logo_styler {
+        color: $base-lightblue;
+    }
+}
+
+.main-nav-btns {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: $mobile-breakpoint) {
+        display: none;
+    }
+}
+
+.new-btn {
+    padding: 9px 14px 10px 14px;
+    background-color: transparent;
+    border: 1px solid $base-navy;
+    color: $base-navy;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        color: $base-lightblue;
+        border: 1px solid $base-lightblue;
+    }
+}
+
+.new-btn-active {
+    background-color: transparent;
+    color: $base-lightblue;
+    border: 1px solid $base-lightblue;
+}
+
+.logout-btn,
+.account-btn,
+.settings-btn,
+.resume-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: $base-navy;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        color: $base-lightblue;
+    }
+}
+
+.account-btn {
+    margin-top: 12px;
+    transition: none;
+}
+
+
+.account-btn-active,
+.resume-btn-active {
+    color: $base-lightblue;
+}
+
+.logout-btn,
+.settings-btn {
+    color: $base-navy;
+    margin: 5px;
+    &:hover {
+        color: $base-lightblue;
+    }
+}
+
+.account-menu-container {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.account-dropdown {
+    background-color: white;
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    width: 90px;
+    border-radius: 5px;
+    padding: 8px 5px;
+    z-index: 10;
+    box-shadow: $box-shadow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+//Dashboard
+
+.welcome {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.username {
+    font-style: italic;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+
+//Create Page
+.create-container {
+    font-weight: 300;
+    padding: 80px;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    @media only screen and (max-width: $mobile-breakpoint) {
+        padding: 80px 40px;
+        padding-top: 100px;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        padding: 80px 40px;
+    }
+}
+
+.create-forms { 
+    width: 50%;
+    @media only screen and (max-width: 1100px) {
+        width: 100%;
+    }
+}
+
+.create-forms-zoom {
+    width: 65%;
+    @media only screen and (max-width: 1250px) {
+        width: 100%;
+    }
+}
+
+.create-form-container {
+    margin-bottom: 40px;
+}
+
+.directions {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    h4 {
+        color: #1b103f;
+        cursor: pointer;
+    }
+    .expand-bar-btn {
+        font-size: 1rem !important;
+        font-style: italic;
+        margin: 0 8px;
+        white-space: nowrap;
+        color: $base-lightblue;
+    }
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background-color: $base-lightblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-right: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.expand-tabs {
+    width: 25px;
+    height: auto;
+    display: none;
+    @media only screen and (max-width: $small-breakpoint) {
+        display: inline-block;
+        margin-bottom: -5px;
+    }
+}
+
+.rotate {
+    transform: rotate(90deg) translateX(2px);
+}
+
+.height-0 {
+    height: 0px !important;
+    min-height: 0px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
+.styles-container {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    box-shadow: $box-shadow;
+    padding: 30px 20px;
+    margin: 20px 0;
+    margin-bottom: 80px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
+.style-option {
+    width: 20%;
+    margin: 5px;
+    padding: 10px;
+    vertical-align: top;
+    border-radius: 5px;
+    box-sizing: content-box;
+    cursor: pointer;
+    img {
+        width: 100%;
+        height: auto;
+        box-shadow: $box-shadow;
+    }
+    p {
+        font-size: 13px;
+        text-align: center;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        width: 60%;
+    }
+}
+
+.input-form {
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    min-width: 350px;
+    min-height: 300px;
+    max-height: max-content;
+    margin: 20px 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: white;
+    transition: all 0.3s ease-in-out !important;
+    @media only screen and (max-width: 1325px) {
+        display: flex;
+        flex-direction: row;
+        max-height: 365px;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        flex-direction: column;
+        min-width: 0px;
+    }
+    .section-selector {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        cursor: pointer;
+        @media only screen and (max-width: 1325px) {
+            display: flex;
+            flex-direction: column;
+        }
+        .tab {
+            padding: 20px 10px;
+            background-color: #e2f6f7;
+            border-left: 1px solid #c6eef0d3;
+            text-align: center;
+            color: #0a8d7e;
+            height: auto;
+            &:hover {
+                background-color: $base-lightblue;
+                color: white;
+                transition: all 0.5s ease-in-out;
+            }
+            @media only screen and (max-width: 1325px) {
+                border-left: none;
+                border-bottom: 1px solid #c6eef0d3;
+            }
+            @media only screen and (max-width: $small-breakpoint) {
+                display: none;
+                background-color: white;
+                &:hover {
+                    background-color: #e2f6f7;
+                    color: #0a8d7e;
+                }
+            }
+
+        }
+        .active-tab {
+            padding: 20px;
+            background-color: white;
+            border-left: 1px solid rgb(255, 255, 255);
+            text-align: center;
+            color: #0a8d7e;
+            transition: none !important;
+            @media only screen and (max-width: 1325px) {
+                border-left: none;
+            }
+            @media only screen and (max-width: $small-breakpoint) {
+                background-color: #e2f6f7;
+                border-radius: 20px 20px 0 0;
+            }
+            
+        }
+        .mobile-tab {
+            display: block !important;
+            border-radius: 0 !important;
+        }
+        .active-menu-tab {
+            border-radius: 0 !important;
+        }
+        .experience-tab {
+            border-right: none;
+            border-radius: 0 20px 0 0;
+            @media only screen and (max-width: 1325px) {
+                border-radius:  0 0 0 20px;
+            }
+            @media only screen and (max-width: $small-breakpoint) {
+                border-radius: 0 0 20px 20px !important;
+            }
+        }
+        .active-experience-menu-tab {
+            border-radius: 20px 20px 0 0 !important;
+        }
+        .header-tab {
+            border-left: none;
+            border-radius: 20px 0 0 0;
+            @media only screen and (max-width: $small-breakpoint) {
+                border-radius:  20px 20px 0 0 !important;
+            }
+        }
+    }
+    .section {
+        padding: 30px;
+        height: auto;
+        overflow-x: hidden;
+        scrollbar-color: rgba(155, 155, 155, 0.5);
+        background-color: white;
+        border-radius: 20px;
+        h5 {
+            color: $base-lightblue;
+            margin-bottom: 20px;
+            margin-top: -15px;
+        }
+        @media only screen and (max-width: 1325px) {
+            width: 100%;
+        }
+        @media only screen and (max-width: 300px) {
+            padding: 25px;
+            p {
+                font-size: 12px;
+            }
+        }
+        .section-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #bdeee8;
+            margin-bottom: 30px;
+        }
+        .contact-section-wrapper {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .experience-section-wrapper {
+            textarea {
+                height: 80px !important;
+            }
+        }
+    }
+    h3 {
+        color: $base-lightblue;
+        margin-bottom: 20px;
+    }
+    @media only screen and (max-width: 875px) {
+        width: 100%;
+    }
+}
+
+.flex-input-container {
+    width: 48%;
+}
+
+.section-flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.flex-input-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 48%;
+    @media only screen and (max-width: 1325px) {
+        width: 100%;
+    }
+}
+
+.duplicate-button {
+    border: none;
+    background: none;
+    font-weight: 500;
+    color: $base-lightblue;
+    font-size: 1rem;
+    margin-top: -0.5rem;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    p {
+        cursor: pointer;
+        width: max-content;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        font-size: 0.9rem;
+    }
+}
+
+.duplicate-section {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: $base-grey;
+    color: #1b103f;
+    padding: 5px;
+    height: 1.8rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 5px;
+    @media only screen and (max-width: $small-breakpoint) {
+        font-size: .9rem;
+    }
+}
+
+label {
+    @media only screen and (max-width: $small-breakpoint) {
+        font-size: .9rem;
+    }
+}
+
+
+
+textarea {
+    border: none;
+    outline: none;
+    background-color: $base-grey;
+    color: #1b103f;
+    padding: 5px;
+    resize: none;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 5px;
+    line-height: 2rem;
+    border-radius: 5px;
+}
+
+#summary-input {
+    
+    @media only screen and (max-width: 1325px) {
+        height: 230px;
+    }
+    
+}
+
+.contact-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    .input-section {
+        width: 50%;
+    }
+}
+
+.flex-container {
+    display: flex;
+    width: 102%;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+
+.duplicate-container {
+    display: flex;
+    align-items: flex-start
+}
+
+.margin-top {
+    margin-top: -6px;
+}
+
+//Save Modal
+.save-modal-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.save-modal {
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    z-index: 20;
+    @media only screen and (max-width: $small-breakpoint) {
+        width: 80vw;
+    }
+    @media only screen and (max-height: 400px) {
+        height: 270px;
+    }
+    .flex {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    h2 {
+        color: white;
+        margin: 0;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 2rem;
+        }
+        @media only screen and (max-height: 400px) {
+            font-size: 2rem;
+        }
+    }
+    .petrona {
+        font-family: 'Petrona', sans-serif;
+        font-size: 2.9rem;
+        margin-left: 8px;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 2.4rem;
+        }
+        @media only screen and (max-height: 400px) {
+            font-size: 2.4rem;
+        }
+    }
+    button {
+        cursor: pointer;
+        background-color: white;
+        width: 200px;
+        padding: 7px 14px 8px 14px;
+        color: #1b103f;
+        outline: none;
+        border: 1px solid white;
+        border-radius: 30px;
+        font-size: 1rem;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 0.9rem;
+            width: 180px;
+        }
+        @media only screen and (max-height: 400px) {
+            font-size: 0.9rem;
+        }
+        @media only screen and (max-height: 400px) {
+            margin-top: 20px;
+        }
+        
+    }
+}
+
+.exit-icon-container {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 21;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    img {
+        width: 15px;
+        height: auto;
+    }
+    @media only screen and (max-width: $mobile-breakpoint) {
+        margin-right: 8px;
+    }
+}
+
+.save-modal-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #1b103f;
+    box-shadow: $box-shadow;
+    padding: 50px;
+    position: relative;
+    @media only screen and (max-width: $small-breakpoint) {
+        h4 {
+            font-size: 1rem;
+        }
+        min-height: 320px;
+        padding: 50px 30px;
+    }
+    @media only screen and (max-width: 320px) {
+        min-height: 380px;
+    }
+    @media only screen and (max-height: 400px) {
+        h4 {
+            font-size: 1rem
+        }
+    }
+    @media only screen and (max-height: 400px) {
+        padding: 20px;
+    }
+    input, label {
+        @media only screen and (max-height: 400px) {
+            font-size: 0.9rem !important;
+        }
+    }
+
+}
+
+.save-resume-form {
+    width: 100%;
+    height: 140px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    @media only screen and (max-width: 350px) {
+        height: 120px;
+        margin-top: 10%;
+    }
+    @media only screen and (max-height: 400px) {
+        height: 120px;
+    }
+    .save-as {
+        width: 100%;
+    }
+    input {
+        border-radius: 20px;
+        padding: 0 10px;
+        height: 40px;
+        width: 100%;
+        border: 2px solid white;
+        background-color: $transparent-white;
+        outline: none;
+        color: white;
+        &::placeholder {
+            color: $transparent-white;
+        }
+        @media only screen and (max-width: $small-breakpoint) {
+            width: 100%;
+        }
+    }
+    label {
+        font-size: 1.1rem;
+        font-weight: 400;
+        @media only screen and (max-width: $small-breakpoint) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.save-as-container {
+    display: flex;
+    align-items: center;
+    h4 {
+        margin-left: 8px;
+    }
+}
+
+.save-options {
+    text-align: center;
+    p {
+        margin-bottom: 30px;
+    }
+    .italic {
+        font-style: italic;
+    }
+    button {
+        transition: all 0.2s ease-in-out;
+        border: 2px solid white;
+        &:hover {
+            border: 2px solid rgb(202, 193, 235);
+        }
+    }
+    .or {
+        margin: 0 10px;
+    }
+}
+
+.modal-graphic {
+    position: absolute;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    background-color: $transparent-white;
+}
+
+.noaccess {
+    overflow: hidden;
+    max-height: 100vh;
+    pointer-events: none;
+}
+
+.noclick {
+    pointer-events: none;
+}
+
+//Error Message Modal
+
+.error-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    background: rgb(255, 255, 255);
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.116) 0px 5px 15px;
+    position: fixed;
+    .error-icon {
+        font-size: 3rem;
+        font-family: 'Petrona', sans-serif;
+    }
+    p {
+        color: $error;
+    }
+    button {
+        margin: 20px;
+        background-color: $error;
+        padding: 10px;
+        color: white;
+        border: none;
+        width: 60px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}
+
+// User Resumes page
+
+.user-resumes-body {
+    width: 100%;
+    padding: 50px;
+    position: relative;
+    @media only screen and (max-width: $small-breakpoint) {
+        padding: 30px;
+        text-align: center;
+    }
+    h3 {
+        margin-bottom: 20px;
+        color: $base-navy;
+    }
+    p {
+        color: $base-navy;
+    }
+}
+
+.user-resumes-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.user-resume {
+    width: 200px;
+    margin: 25px 25px 50px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 100%;
+        height: 258.82px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background: white;
+    }
+}
+
+.user-resume-title {
+    margin-top: 10px;
+}
+
+.resume-actions {
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.view-resume {
+    background-color: $base-lightblue;
+    border: none;
+    color: white;
+    padding: 8px;
+    width: 75px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: #50b3a7;
+    }
+}
+
+.delete-resume {
+    border: 1px solid $error;
+    color: $error;
+    background: white;
+    padding: 8px;
+    width: 75px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: $error;
+        color: white;
+    }
+}
+
+.new-resume-button {
+    background-color: $base-lightblue;
+    padding: 14px;
+    width: 180px;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: #50b3a7;
+    }
+}
+
+.empty-user-resumes {
+    width: 100%;
+    height: calc(100vh - 230px);
+    position: relative;
+    button {
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+}
+
+.delete-modal {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: $box-shadow;
+    @media only screen and (max-width: 500px) {
+        width: 80vw;
+        height: calc(100% - 60px);
+    }
+    @media only screen and (max-width: 300px) {
+        min-height: 360px;
+    }
+    @media only screen and (max-height: 300px) {
+        height: 240px;
+    }
+    .bottom-accent {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        background-color: $error;
+        border-radius: 0 0 20px 20px;
+        bottom: 0;
+    }
+    .delete-modal-content {
+        padding: 50px 30px 30px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 60px);
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.delete-modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    z-index: 5;
+    .delete-modal-wrapper {
+        width: 460px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+    }
+    .exit-icon-container {
+        position: absolute;
+        background-color: transparent;
+        margin: 10px;
+        z-index: 15;
+        right: 0;
+    }
+}
+
+.delete-options {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    @media only screen and (max-height: 300px) {
+        margin-top: 10px;
+    }
+    .go-back {
+        background-color: $base-lightblue;
+        padding: 15px;
+        margin: 10px;
+        border: none;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: #50b3a7;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 150px;
+        }
+    }
+    .confirm-delete {
+        background-color: $error;
+        padding: 15px;
+        margin: 10px;
+        border: none;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: $error;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 150px;
+        }
+    }
+}
+
+.user-resumes-bg {
+    background-image: url('../assets/login-bg.png');
+    background-size: 300px;
+    opacity: 0.15;
+    transform: rotate(2deg);
+    background-repeat: repeat-x;
+    width: 100vw;
+    height: 20vh;
+    left: 0;
+    bottom: -20vh;
+    position: absolute;
+    z-index: 0;
+}
+
+//Settings Page
+
+.contact-section {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 60px;
+    width: 80%;
+    @media only screen and (max-width: $small-breakpoint) {
+        margin-bottom: 0px;
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+    }
+    @media only screen and (max-height: 600px) {
+        margin-bottom: 0px;
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+    }
+}
+
+.settings-body {
+    padding: 50px;
+    h3 {
+        padding-bottom: 20px;
+        color: $base-navy;
+    }
+    h4 {
+        padding-bottom: 5px;
+        color: $base-navy;
+    }
+    p {
+        color: $base-navy;
+    }
+    .settings-section {
+        margin-bottom: 20px;
+    }
+    .setting {
+        display: flex;
+        img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
+    .edit-input {
+        display: flex;
+        align-items: center;
+    }
+    input {
+        width: 350px;
+    }
+    .save-button {
+        border-radius: 15px;
+        min-width: 70px;
+        padding: 3px;
+        border: 1px solid $base-lightblue;
+        background-color: $base-lightblue;
+        transition: all 0.2s ease-in-out;
+        margin: 0 10px;
+        margin-top: 5px;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            background-color: #50b3a7;
+            border: 1px solid #50b3a7;
+        }
+    }
+    .cancel-button {
+        border-radius: 15px;
+        min-width: 70px;
+        padding: 3px;
+        border: 1px solid $error;
+        background-color: $error;
+        transition: all 0.2s ease-in-out;
+        margin: 0px;
+        margin-top: 5px;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            background-color: $error;
+            border: 1px solid $error;
+        }
+    }
+    .reset-button {
+        margin-left: 0px;
+        padding: 5px;
+    }
+    .password-cancel-button {
+        padding: 5px;
+    }
+    .update-success {
+        color: $base-lightblue;
+        font-style: italic;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+
+    .update-error {
+        color: $error;
+        font-style: italic;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+    .reset-step {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+    
+    .reset-password {
+        font-weight: 700;
+        font-size: 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: $base-lightblue;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        padding: 30px;
+    }
+}
+
+//Resumes
+
+.create-resume-preview {
+    width: 50%;  
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    @media only screen and (max-width: 1100px) {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.min-margin-top {
+    margin-top: -60px;
+    transition: all 0.5s ease;
+    @media only screen and (max-width: 1100px) {
+        margin-top: 20px;
+    }
+}
+
+.create-resume-preview-zoom {
+    height: 70vw;
+    width: 100%;
+    justify-content: center;
+    transition: none !important;
+    margin-top: none !important;
+    @media only screen and (max-width: 1100px) {
+        height: auto;
+    }
+}
+
+#pdf,
+#pdf-container {
+    position: absolute;
+    width: 816px !important;
+    max-width: 816px !important;
+    height: 1056px !important;
+    max-height: 1056px !important;
+}
+
+
+.zoom-button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    z-index: 2;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.836);
+    border: 1px solid $base-lightblue;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    img {
+        width: 35px;
+        height: 35px;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            width: 38px;
+            height: 38px;
+        }
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        display: none;
+    }
+}
+
+.enlarged {
+    width: 900px;
+    max-width: 900px;
+    height: 1664.7px;
+    max-height: 1664.7px;
+    transition: none;
+
+}
+
+.selected-style {
+    border: 2px solid $base-lightblue;
+}
+
+.unselected-style {
+    border: 2px solid transparent;
+}
+
+
+.duplicate-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.save-resume-container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.save-resume,
+.clear-fields {
+    background-color:  #1b103f;
+    color: white;
+    outline: none;
+    border: 1px solid #1b103f;
+    padding: 10px;
+    min-width: 141px;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color:  rgb(42, 30, 83);
+    }
+}
+
+.clear-fields {
+    color: white;
+    background-color: $error;
+    border: 1px solid $error;
+    &:hover {
+        color: white;
+        background-color: rgb(163, 77, 77);
+        border: 1px solid rgb(163, 71, 71);
+    }
+}
+
+.outer-resume-wrapper {
+    width: 425px;
+    max-width: 425px;
+    height: 550px;
+    max-height: 550px;
+    box-shadow: rgba(102, 108, 114, 0.2) 0px 8px 24px;
+    background-color: white;
+    margin: 0 auto;
+    position: fixed;
+    margin-top: -40px;
+    overflow: hidden;
+    @media only screen and (min-width: 1600px) and (min-height: 1000px) {
+        width: 600px;
+        max-width: 600px;
+        height: 776.47px;
+        max-height: 776.47px;
+    }
+    @media only screen and (max-width: 1100px) {
+        position: relative;
+        margin-bottom: 80px;
+        width: 60vw;
+        min-width: 60vw;
+        max-width: 60vw;
+        height: 77.28vw;
+        min-height: 77.28vw;
+        max-height: 77.28vw;
+    }
+    @media only screen and (max-width: $small-breakpoint) {
+        width: 80vw;
+        max-width: 80vw;
+        min-width: 80vw;
+        height: 103.525vw;
+        max-height: 103.535vw;
+        min-height: 103.535vw;
+    }
+    h1 {
+       overflow-wrap: break-word;
+    }
+}
+
+.enlarged-outer-resume-wrapper {
+    width: 50vw;
+    max-width: 50vw;
+    min-width: 50vw;
+    height: 64.7vw;
+    max-height: 64.7vw;
+    position: absolute;
+    top: 0;
+    margin-bottom: 50px;
+    @media only screen and (max-width: 1100px) {
+        position: relative;
+        margin-bottom: 80px;
+        width: 80vw;
+        max-width: 80vw;
+        min-width: 80vw;
+        height: 103.525vw;
+        max-height: 103.535vw;
+    }
+}
+
+.creating-outer-resume-wrapper {
+    width: 816px;
+    max-width: 816px;
+    min-width: 816px;
+    height: 1056px;
+    max-height: 1056px;
+    position: absolute;
+}
+
+.load {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    img {
+        width: 3em;
+        height: 3em;
+    }
+}
+
+.no-display {
+    display: none;
+}
+
+.resume-0,
+.resume-1,
+.resume-2 {
+    h1 {
+        color: black;
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+    h2 {
+        font-size: 0.6em;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        overflow-wrap: break-word;
+        letter-spacing: .2em;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 0.6em;
+    }
+    p, li {
+        font-family: 'Roboto', sans-serif;
+        overflow-wrap: break-word;
+    }
+    .inner-resume-wrapper {
+        margin: calc(1em * 0.8)
+    }
+    .name-title-wrapper {
+        width: 65%;
+        padding-right: 1.2em;
+    }
+    
+    .outer-name-wrapper {
+        height: 1.6em;
+        max-height: 1.8em;
+        overflow: hidden;
+        margin-bottom: 0.2em;
+    }
+    
+    .outer-contact-wrapper {
+        width: 35%;
+        height: 3.9em;
+        max-height: 3.9em;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.2em;
+            p {
+                margin-right: 0.3em;
+                margin-top: 0.1em;
+                text-align: right;
+                word-break: break-all;
+            }
+            svg {
+                flex-shrink: 0;
+            }
+        }
+    }
+    .header-section {
+        height: 4.5em;
+        padding-bottom: 0.8em;
+        border-bottom: 1px solid black;
+        display: flex;
+    }
+    
+    .outer-body-wrapper {
+        display: flex;
+        width: 100%;
+        height: 18.8em;
+        max-height: 18.8em;
+        padding-top: 0.8em;
+        overflow: hidden;
+    }
+
+    .inner-body-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    
+    .inner-right-body-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    
+    .outer-left-body-wrapper {
+        min-height: 100%;
+        max-height: 18em;
+        width: 40%;
+        padding-right: 0.8em;
+        padding-bottom: 0.8em;
+        border-right: 1px solid black;
+    }
+    
+    .inner-left-body-wrapper {
+        height: auto;
+        width: 100%;
+    }
+    
+    .outer-right-body-wrapper {
+        min-height: 100%;
+        max-height: 18em;
+        width: 60%;
+        padding-left: 0.8em;
+        clear: both;
+    }
+    
+    .content-section {
+        padding-bottom: 0.8em;
+        margin-bottom: 0.8em;
+        border-bottom: 1px solid black;
+        p {
+            overflow-wrap: break-word;
+        }
+    }
+    
+    .skill-content-section {
+        padding-bottom: 0em;
+        border-bottom: none !important;
+    }
+    
+    .education-item {
+        margin-bottom: 1em;
+    }
+    
+    .institution-wrapper {
+        margin-bottom: 0.4em;
+    }
+    
+    .all-degrees-wrapper {
+        margin-bottom: 0.5em;
+    }
+    
+    .degree-wrapper {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 0.3em;
+        .degree-type {
+            margin-right: 0.5em;
+            max-width: 8em;
+        }
+    }
+    
+    .dates-wrapper {
+        display: flex;
+    }
+    
+    .additional-info {
+        font-style: italic;
+    }
+    
+    .skill-category-wrapper {
+        margin-bottom: 1em;
+    }
+    
+    .skill-category {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.4em;
+    }
+    
+    .skills-wrapper {
+        display: flex;
+    }
+    
+    .experience-content-wrapper {
+        margin-bottom: 2em;
+    }
+    
+    .experience-title-dates-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 0.6em;
+    }
+    
+    .job-title {
+        padding-right: 1em;
+        width: 60%;
+    }
+    
+    .experience-dates-wrapper {
+        display: flex;
+        width: 40%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        p {
+            font-weight: 300;
+        }
+    }
+    
+    .company {
+        width: 100%;
+        margin-bottom: 0.6em;
+    }
+    
+    .experience-summary {
+        width: 100%;
+    }
+    
+    .experience-details-ul {
+        list-style-position: outside;
+        padding-left: 2.5em;
+        width: 100%;
+        margin-top: 0.4em;
+    }
+    .degree-type,
+    .degree-field,
+    .skill-category,
+    .job-title {
+        font-weight: 400;
+    }
+    
+}
+
+.resume-1 {
+    .header-section h2,
+    .degree-type,
+    .degree-field,
+    .skill-category,
+    .job-title {
+        color: black;
+    }
+    .header-section h2,
+    .inner-body-wrapper h2 {
+        color: #EABE21;
+    }
+    h1,
+    p,
+    li {
+        color: black;
+    }
+    .skill-content-section {
+        border-bottom: none;
+    }
+}
+
+.resume-2 {
+    .header-section h2,
+    .inner-body-wrapper h2 {
+        color: #1D8694;
+    }
+    .skill-content-section {
+        border-bottom: none;
+    }
+}
+
+.resume-3, 
+.resume-4,
+.resume-5 {
+    h1 {
+        text-transform: uppercase;
+        font-family: poppins, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        text-align: center;
+        color: white;
+        margin-bottom: 0.3em;
+        max-width: 100%;
+    }
+    h2 {
+        font-size: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-weight: 300;
+        line-height: 1.5em;
+        margin: 1em 0;
+        font-weight: 300;
+        font-style: normal;
+        overflow-wrap: break-word;
+    }
+
+    p, li, h2 {
+        color: #363636;
+        font-family: poppins, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        overflow-wrap: break-word;
+    }
+    
+    .inner-resume-wrapper {
+        height: 100%;
+    }
+    .header-section {
+        padding: calc(1em * 0.8);
+        padding-bottom: 1em;
+        position: relative;
+        min-height: 5.45em;
+        height: 5.45em;
+        max-height: 5.45em;
+        background-color: #9F7F7F;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            text-align: center;
+            margin: 0.5em 0;
+            margin-top: -0.75em;
+            color: white;
+        }
+    }
+    .outer-name-wrapper {
+        height: 2.2em;
+        max-height: 2.2em;
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+        margin-top: 0.2em;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        overflow-wrap: break-all;
+    }
+    .header-underline {
+        display: none;
+    }
+    .outer-contact-wrapper {
+        background-color: white;
+        position: absolute;
+        width: 17.65em;
+        max-width: 17.65em;
+        padding: 0.25em 0.5em;
+        height: 2.2em;
+        border-radius: 10px;
+        max-height: 2.2em;
+        overflow: hidden;
+        bottom: -1.2em;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        min-height: 1.5em;
+        justify-content: space-evenly;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        p {
+            margin-top: 0.3em;
+        }
+    }
+    .contact-item {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        margin: 0 0.25em;
+        height: 1.5em;
+    }
+    .inner-resume-wrapper {
+        height: 100%;
+    }
+    .outer-body-wrapper {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+    .inner-body-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+
+    .outer-left-body-wrapper {
+        min-height: 100%;
+        max-height: 100%;
+        width: 40%;
+        background-color: #F1ECEC;
+        padding: 0 0.8em 0 0.8em;
+    }
+
+    .inner-left-body-wrapper {
+        padding-top: 0.5em;
+        height: max-content;
+        padding-bottom: 0.8em;
+    }
+
+    .outer-right-body-wrapper {
+        min-height: 100%;
+        max-height: 100%;
+        width: 60%;
+        background-color: #FAF8F8;
+        padding: 0 0.8em 0 0.8em;
+    }
+
+    .content-section {
+        margin-bottom: 0.8em;
+        p {
+            overflow-wrap: break-word;
+        }
+    }
+    .education-item {
+        margin-bottom: 1em;
+    }
+    
+    .institution-wrapper {
+        margin-bottom: 0.4em;
+    }
+    
+    .all-degrees-wrapper {
+        margin-bottom: 0.5em;
+    }
+    
+    .degree-wrapper {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: 400;
+        .degree-type {
+            margin-right: 0.2em;
+            max-width: 8em;
+        }
+    }
+    
+    .dates-wrapper {
+        display: flex;
+    }
+    
+    .additional-info {
+        font-style: italic;
+    }
+
+    .skill-category-wrapper {
+        margin-bottom: 1em;
+    }
+    
+    .skill-category {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.4em;
+    }
+    
+    .skills-wrapper {
+        display: flex;
+    }
+
+    .inner-right-body-wrapper {
+        padding-top: 0.5em;
+        height: max-content;
+        padding-bottom: 0.8em;
+    }
+
+    .experience-content-wrapper {
+        margin-bottom: 2em;
+    }
+    
+    .experience-title-dates-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 0.6em;
+    }
+    
+    .job-title {
+        padding-right: 1em;
+        width: 60%;
+    }
+    
+    .experience-dates-wrapper {
+        display: flex;
+        width: 40%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .company {
+        width: 100%;
+        margin-bottom: 0.6em;
+    }
+    
+    .experience-summary {
+        width: 100%;
+    }
+    
+    .experience-details-ul {
+        list-style-position: outside;
+        padding-left: 2.5em;
+        width: 100%;
+        margin-top: 0.4em;
+    }
+
+    .extra-body-padding {
+        padding-top: 1.2em;
+    }
+    
+}
+
+.resume-4 {
+    .header-section {
+        background-color: #384C62;
+    }
+    .outer-left-body-wrapper {
+        background-color: #E1E4E8;
+    }
+    .outer-right-body-wrapper {
+        background-color: #F5F6F7;
+    }
+}
+
+.resume-5 {
+    .header-section {
+        background-color: #93AAA0;
+    }
+    .outer-left-body-wrapper {
+        background-color: #EFF2F1;
+    }
+    .outer-right-body-wrapper {
+        background-color: #F9FAFA;
+    }
+}
+
+.resume-6, 
+.resume-7, 
+.resume-8 {
+    h1 {
+        color: black;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 200;
+        text-transform: uppercase;
+
+    }
+    h2 {
+        color: #93AAA0;
+        font-family: 'Noto Serif', serif;
+        font-size: 0.6em;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 0.6em;
+        overflow-wrap: break-word;
+    }
+    p, li {
+        color: black;
+        font-family: 'Outfit', sans-serif;
+        overflow-wrap: break-word;
+    }
+    .header-section {
+        padding: calc(1em * 0.8);
+        padding-bottom: 1em;
+        position: relative;
+        min-height: 5.45em;
+        height: 5.45em;
+        max-height: 5.45em;
+        background-color: #93AAA0;
+        display: flex;
+        h2 {
+            color: white;
+        }
+    }
+    .name-title-wrapper {
+        width: 65%;
+        padding-right: 1.2em;
+    }
+    
+    .outer-name-wrapper {
+        height: 1.6em;
+        max-height: 1.8em;
+        overflow: hidden;
+        margin-bottom: 0.2em;
+    }
+    
+    .outer-contact-wrapper {
+        width: 35%;
+        height: 3.9em;
+        max-height: 3.9em;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.15em;
+            p {
+                margin-right: 0.3em;
+                margin-top: 0.1em;
+                text-align: right;
+                color: white;
+            }
+        }
+    }
+    .outer-body-wrapper {
+        display: flex;
+        width: 100%;
+        height: 18.8em;
+        max-height: 18.8em;
+        padding-top: 0.8em;
+        overflow: hidden;
+    }
+
+    .inner-body-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    
+    .inner-right-body-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    
+    .outer-left-body-wrapper {
+        min-height: 100%;
+        max-height: 18em;
+        width: 40%;
+        padding: 0 0.8em;
+        border-right: 1px dashed #93AAA0;
+    }
+    
+    .inner-left-body-wrapper {
+        height: auto;
+        width: 100%;
+    }
+    
+    .outer-right-body-wrapper {
+        min-height: 100%;
+        max-height: 18em;
+        width: 60%;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        clear: both;
+    }
+    
+    .content-section {
+        padding-bottom: 0.8em;
+        margin-bottom: 0.8em;
+        border-bottom: 1px dashed #93AAA0;
+        p {
+            overflow-wrap: break-word;
+        }
+    }
+
+    .summary-section {
+        p {
+            margin-bottom: 0.8em;
+        }
+    }
+    
+    .skill-content-section {
+        padding-bottom: 0em;
+        border-bottom: none;
+    }
+    
+    .education-item {
+        margin-bottom: 1em;
+    }
+    
+    .institution-wrapper {
+        margin-bottom: 0.4em;
+    }
+    
+    .all-degrees-wrapper {
+        margin-bottom: 0.5em;
+    }
+    
+    .degree-wrapper {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: 400;
+        .degree-type {
+            margin-right: 0.5em;
+            max-width: 8em;
+        }
+    }
+    
+    .dates-wrapper {
+        display: flex;
+    }
+    
+    .additional-info {
+        font-style: italic;
+    }
+    
+    .skill-category-wrapper {
+        margin-bottom: 1em;
+    }
+    
+    .skill-category {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.4em;
+    }
+    
+    .skills-wrapper {
+        display: flex;
+    }
+    
+    .experience-content-wrapper {
+        margin-bottom: 2em;
+    }
+    
+    .experience-title-dates-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 0.6em;
+    }
+    
+    .job-title {
+        padding-right: 1em;
+        width: 60%;
+    }
+    
+    .experience-dates-wrapper {
+        display: flex;
+        width: 40%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .company {
+        width: 100%;
+        margin-bottom: 0.6em;
+    }
+    
+    .experience-summary {
+        width: 100%;
+    }
+    
+    .experience-details-ul {
+        list-style-position: outside;
+        padding-left: 2.5em;
+        width: 100%;
+        margin-top: 0.4em;
+    }
+    
+}
+
+.resume-7 {
+    .header-section {
+        background-color: #9F7F7F;
+    }
+    .inner-body-wrapper h2 {
+        color: #9F7F7F
+    }
+    .outer-left-body-wrapper {
+        border-right: 1px dashed #9F7F7F;
+    }
+
+    .content-section {
+        border-bottom: 1px dashed #9F7F7F;
+    }
+
+    .skill-content-section {
+        border-bottom: none;
+        padding-bottom: 0em;
+    }
+}
+
+.resume-8 {
+    .header-section {
+        background-color: #7F9AB3;
+    }
+    .inner-body-wrapper h2 {
+        color: #7F9AB3;
+    }
+    .outer-left-body-wrapper {
+        border-right: 1px dashed #7F9AB3;
+    }
+
+    .content-section {
+        border-bottom: 1px dashed #7F9AB3;
+    }
+
+    .skill-content-section {
+        border-bottom: none;
+        padding-bottom: 0em;
+    }
+}
+
+.resume-9,
+.resume-10,
+.resume-11 {
+    h1 {
+        text-transform: uppercase;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 200;
+        text-align: center;
+        color: #D08686;
+        margin-bottom: 0.1em;
+        max-width: 100%;
+    }
+    h2 {
+        font-size: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-weight: 300;
+        line-height: 1.5em;
+        overflow-wrap: break-word;
+        margin: 0;
+        font-family: 'Arvo', serif;
+        color: #626A6D;
+    }
+    p, li {
+        color: #363636;
+        font-family: 'Gothic A1', sans-serif;
+        overflow-wrap: break-word;
+    }
+    .inner-resume-wrapper {
+        height: 100%;
+    }
+    .header-section {
+        padding: calc(1em * 0.5);
+        padding-bottom: 1em;
+        position: relative;
+        min-height: 5.45em;
+        height: 5.45em;
+        max-height: 5.45em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top: 0.5em solid #D08686;
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .outer-name-wrapper {
+        height: 1.8em;
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+    .header-underline {
+        width: 4em;
+        height: 1px;
+        border-bottom: 1px solid white;
+        margin: 0 auto;
+    }
+    .outer-contact-wrapper {
+        position: absolute;
+        width: 18.3em;
+        max-width: 18.3em;
+        padding: 0.33em 0.5em 0.25em 0.5em;
+        border-top: 1px solid #626a6d69;
+        border-bottom: 1px solid #626a6d69;
+        height: 2.2em;
+        max-height: 2.2em;
+        overflow: hidden;
+        bottom: -1.5em;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        min-height: 1.5em;
+        justify-content: space-evenly;
+        p {
+            margin-top: 0.3em;
+        }
+    }
+    .contact-item {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        margin: 0 0.25em;
+        height: 1.5em;
+    }
+    .inner-resume-wrapper {
+        height: 100%;
+    }
+    .outer-body-wrapper {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+    .inner-body-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+        border-bottom: 0.5em solid #D08686;
+    }
+
+    .outer-left-body-wrapper {
+        min-height: 100%;
+        max-height: 100%;
+        width: 40%;
+        padding: 0 0.8em 0 0.8em;
+    }
+
+    .inner-left-body-wrapper {
+        height: max-content;
+        padding-bottom: 0.8em;
+    }
+
+    .outer-right-body-wrapper {
+        min-height: 100%;
+        max-height: 100%;
+        width: 60%;
+        padding: 0 0.8em 0 0.8em;
+    }
+
+    .content-section,
+    .inner-right-body-wrapper {
+        margin-bottom: 0.8em;
+        p {
+            overflow-wrap: break-word;
+        }
+        h2 {
+            margin-bottom: 0.8em;
+        }
+    }
+    .education-item {
+        margin-bottom: 1em;
+    }
+    
+    .institution-wrapper {
+        margin-bottom: 0.4em;
+    }
+    
+    .all-degrees-wrapper {
+        margin-bottom: 0.5em;
+    }
+    
+    .degree-wrapper {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: 400;
+        .degree-type {
+            margin-right: 0.5em;
+            max-width: 8em;
+        }
+    }
+    
+    .dates-wrapper {
+        display: flex;
+    }
+    
+    .additional-info {
+        font-style: italic;
+    }
+
+    .skill-category-wrapper {
+        margin-bottom: 1em;
+    }
+    
+    .skill-category {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.4em;
+    }
+    
+    .skills-wrapper {
+        display: flex;
+    }
+
+    .inner-right-body-wrapper {
+        height: max-content;
+        padding-bottom: 0.8em;
+    }
+
+    .experience-content-wrapper {
+        margin-bottom: 2em;
+    }
+    
+    .experience-title-dates-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 0.6em;
+    }
+    
+    .job-title {
+        padding-right: 1em;
+        width: 60%;
+    }
+    
+    .experience-dates-wrapper {
+        display: flex;
+        width: 40%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .company {
+        width: 100%;
+        margin-bottom: 0.6em;
+    }
+    
+    .experience-summary {
+        width: 100%;
+    }
+    
+    .experience-details-ul {
+        list-style-position: outside;
+        padding-left: 2.5em;
+        width: 100%;
+        margin-top: 0.4em;
+    }
+
+    .extra-body-padding {
+        padding-top: 2.2em;
+    }
+    
+}
+
+.resume-10 {
+    .inner-body-wrapper {
+        border-bottom: 0.5em solid #384C62;
+    }
+
+    .outer-body-wrapper {
+        height: 18.85em;
+    }
+
+    .header-section {
+        border-top: 0.5em solid #384C62;
+    }
+
+    h1 {
+        color: #384C62;
+    }
+}
+
+.resume-11 {
+    .inner-body-wrapper {
+        border-bottom: 0.5em solid #EABE21;
+    }
+
+    .outer-body-wrapper {
+        height: 18.85em;
+    }
+
+    .header-section {
+        border-top: 0.5em solid #EABE21;
+    }
+
+    h1 {
+        color: #EABE21;
+    }
+}
+
+.resume-12, 
+.resume-13, 
+.resume-14 {
+    h1 {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        font-weight: 300;
+
+    }
+    h2 {
+        color: black;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.6em;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 0.6em;
+        overflow-wrap: break-word;
+    }
+    p, li {
+        color: black;
+        font-family: 'Outfit', sans-serif;
+        overflow-wrap: break-word;
+    }
+    .header-section {
+        height: 3.8em;
+        border-bottom: 1px solid black;
+        padding: calc(1em * 0.8);
+        box-sizing: content-box;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        h2 {
+            color: white;
+        }
+    }
+    .header-section::after {
+        height: 150%;
+        width: 68%;
+        left: -5%;
+        top: -25%;
+        background-color: black;
+        position: absolute;
+        content: "";
+        z-index: 1;
+        transform: rotate(11deg);
+    }
+    .name-title-wrapper {
+        width: 65%;
+        padding-right: 1.2em;
+        z-index: 2;
+    }
+    
+    .outer-name-wrapper {
+        height: 1.6em;
+        max-height: 1.8em;
+        overflow: hidden;
+        margin-bottom: 0.4em;
+    }
+    
+    .outer-contact-wrapper {
+        width: 35%;
+        height: 3.9em;
+        max-height: 3.9em;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.2em;
+            p {
+                margin-right: 0.3em;
+                margin-top: 0.1em;
+                text-align: right;
+                word-break: break-all;
+            }
+            svg {
+                flex-shrink: 0;
+            }
+        }
+    }
+    .outer-body-wrapper {
+        display: flex;
+        width: 100%;
+        height: 19.5em;
+        max-height: 19.5em;
+        padding-top: 0.8em;
+        padding-bottom: 0.8em;
+        overflow: hidden;
+    }
+
+    .inner-body-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    
+    .inner-right-body-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    
+    .outer-left-body-wrapper {
+        min-height: 100%;
+        max-height: 18em;
+        width: 40%;
+        padding: 0 0.8em;
+        border-right: 1px solid black;
+    }
+    
+    .inner-left-body-wrapper {
+        height: auto;
+        width: 100%;
+    }
+    
+    .outer-right-body-wrapper {
+        min-height: 100%;
+        max-height: 18em;
+        width: 60%;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        clear: both;
+    }
+    
+    .content-section {
+        padding-bottom: 0.8em;
+        margin-bottom: 0.8em;
+        border-bottom: 1px solid black;
+        p {
+            overflow-wrap: break-word;
+        }
+    }
+
+    .summary-section {
+        p {
+            margin-bottom: 0.8em;
+        }
+    }
+    
+    .skill-content-section {
+        padding-bottom: 0em;
+        border-bottom: none;
+    }
+    
+    .education-item {
+        margin-bottom: 1em;
+    }
+    
+    .institution-wrapper {
+        margin-bottom: 0.4em;
+    }
+    
+    .all-degrees-wrapper {
+        margin-bottom: 0.5em;
+    }
+    
+    .degree-wrapper {
+        display: flex;
+        text-transform: uppercase;
+        font-weight: 400;
+        .degree-type {
+            margin-right: 0.5em;
+            max-width: 8em;
+        }
+    }
+    
+    .dates-wrapper {
+        display: flex;
+    }
+    
+    .additional-info {
+        font-style: italic;
+    }
+    
+    .skill-category-wrapper {
+        margin-bottom: 1em;
+    }
+    
+    .skill-category {
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0.4em;
+    }
+    
+    .skills-wrapper {
+        display: flex;
+    }
+    
+    .experience-content-wrapper {
+        margin-bottom: 2em;
+    }
+    
+    .experience-title-dates-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 0.6em;
+    }
+    
+    .job-title {
+        padding-right: 1em;
+        width: 60%;
+    }
+    
+    .experience-dates-wrapper {
+        display: flex;
+        width: 40%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .company {
+        width: 100%;
+        margin-bottom: 0.6em;
+    }
+    
+    .experience-summary {
+        width: 100%;
+    }
+    
+    .experience-details-ul {
+        list-style-position: outside;
+        padding-left: 2.5em;
+        width: 100%;
+        margin-top: 0.4em;
+    }
+    
+}
+
+.resume-13 {
+    h1 {
+        color: black;
+    }
+    h2 {
+        color: #E0B51E;
+    }
+    .header-section h2 {
+        color: white;
+    }
+    .header-section::after {
+        background-color: #E0B51E;
+    }
+    .header-section {
+        border-bottom: 1px solid #E0B51E;
+    }
+}
+
+.resume-14 {
+    h1 {
+        color: black;
+    }
+    h2 {
+        color: #1D8694;
+    }
+    .header-section h2 {
+        color: white;
+    }
+    .header-section::after {
+        background-color: #1D8694;
+    }
+    .header-section {
+        border-bottom: 1px solid #1D8694;
+    }
+}
+
+.pdf-wrapper {
+    width: 816px;
+    height: 1056px;
+    position: fixed;
+    .outer-name-wrapper {
+        h1 {
+            overflow-wrap: break-word;
+        }
+    }
+    .resume-0,
+    .resume-1,
+    .resume-2 {
+        h1 {
+            overflow-wrap: break-word;
+        }
+        h2 {
+            font-size: 24.12px;
+        }
+        p, li {
+            font-weight: 200;
+        }
+        .degree-type,
+        .degree-field,
+        .skill-category,
+        .job-title,
+        .experience-dates-wrapper p {
+            font-weight: 400;
+        }
+        .experience-dates-wrapper p {
+            font-weight: 300;
+        }
+    }
+
+    .resume-6,
+    .resume-7,
+    .resume-8 {
+        h1 {
+            overflow-wrap: break-word;
+        }
+        .experience-content-wrapper {
+            margin-bottom: 1.5em;
+        }
+        .content-section {
+            padding-bottom: 0.6em;
+            margin-bottom: 0.6em;
+        }
+        .summary-section {
+            p {
+                margin-bottom: 0.6em;
+            }
+        }
+    }
+
+    .resume-9,
+    .resume-10,
+    .resume-11 {
+        h1 {
+            font-weight: 300;
+        }
+        h2 {
+            font-size: 21.12px;
+        }
+        .outer-name-wrapper {
+            width: 95%;
+            max-width: 95%;
+        }
+    }
+
+}
+
+.expanded-contact-wrapper {
+    width: 772.992px !important;
+    max-width: 772.992px !important;
+}
